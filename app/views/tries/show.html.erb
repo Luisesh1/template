@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Texto:</strong>
+  <%= @try.texto %>
+  <%= image_tag @try.imagen.url %><br>
+  <%= link_to "ver pdf",@try.pdf.url %>
+</p>
+
+<%= link_to 'Edit', edit_try_path(@try) %> |
+<%= link_to 'Back', tries_path %>

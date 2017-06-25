@@ -1,0 +1,31 @@
+<%= form_for(@try) do |f| %>
+  <% if @try.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@try.errors.count, "error") %> prohibited this try from being saved:</h2>
+
+      <ul>
+      <% @try.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :texto %><br>
+    <%= f.text_field :texto %>
+  </div>
+  <div class="field">
+    <%= f.label :imagen%>
+    <%= f.file_field :imagen %>
+  </div>
+  <div class="field">
+    <%= f.label :pdf%>
+    <%= f.file_field :pdf %>
+  </div>
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
